@@ -10,6 +10,7 @@ Build-Depends: debhelper (>= 8.0.0),
 	       doxygen,
 	       uuid-dev,
 	       libsslcommon2-dev,
+	       php5-dev,
 	       python-epydoc,
 	       python (>=2.6.6-3~),
 	       python-dev (>=2.6.6-3~),
@@ -60,3 +61,10 @@ Package: python-qpid-proton-doc
 Architecture: all
 Depends: python-qpid-proton (= ${binary:Version})
 Description: Documentation for the Python language bindings for Qpid Proton
+
+Package: php-qpid-proton
+Architecture: any
+Depends: libqpid-proton (= ${binary:Version}), libc6, php5-common, ${misc:Depends}
+Provides: ${php:Provides}
+Description: PHP language bindings for Qpid Proton messaging framework
+
